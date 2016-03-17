@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 app.controller('categoryCreate', function($scope){
 
         $scope.test  ="categroytest";

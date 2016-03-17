@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <script type="text/javascript" src="angular.js"></script>
+     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="src/routing.js"></script>
 
       <!--Mes controllers-->
       <script type="text/javascript" src="src/controllers/categoryController.js"></script>
@@ -20,10 +22,8 @@
   </head>
   <body >
 <body ng-app="collectify">
-    <div ng-controller="itemList">
-        <div ng-repeat="item in items">
-            <p decorate-item></p>
-        </div>
+    <div ng-view >
+
     </div>
 
 

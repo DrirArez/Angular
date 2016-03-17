@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+      <!--Mes controllers-->
+      <script type="text/javascript" src="src/controllers/categoryController.js"></script>
+      <script type="text/javascript" src="src/controllers/itemController.js"></script>
+      <!--Mes directives-->
+      <script type="text/javascript" src="src/directives/itemDecoratorDirective.js"></script>
+
+      <!--Mes services-->
+      <script type="text/javascript" src="src/services/itemProvider.js"></script>
+
+
+
+      <title></title>
+  </head>
+  <body >
+<body ng-app="collectify">
+    <div ng-controller="itemList">
+        <div ng-repeat="item in items">
+            <p decorate-item></p>
+        </div>
+    </div>
+
+
+</body>
+</html>

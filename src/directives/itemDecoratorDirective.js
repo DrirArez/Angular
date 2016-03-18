@@ -5,6 +5,6 @@
 
 app.directive('decorateItem', function(){
         return{
-            template: 'Item "{{item.name}}" dans la categroie {{item.category_id}}'
+            templateUrl: 'src/views/item/directive/decorate.html '
         }
 });

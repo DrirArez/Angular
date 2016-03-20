@@ -9,10 +9,10 @@ app.service('itemProvider', function ($firebase) {
 
     var ref =  new Firebase("https://popping-inferno-6997.firebaseio.com/");
 
-    var sync = $firebase(ref);
+    var sync = $firebase(ref).$asObject;
+
     sync.$set('items', items);
 
-        
     this.getItems = function () {
         return items;
     };

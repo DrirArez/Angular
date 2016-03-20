@@ -1,17 +1,12 @@
 'use strict';
 
-var items = [
-    {'name': 'Django Unchained', 'category_id': 1},
-    {'name': 'Forrest Gump', 'category_id': 1}
-];
-
-app.service('itemProvider', function ($firebase) {
+app.service('itemProvider', function ($firebaseArray) {
 
     var ref =  new Firebase("https://popping-inferno-6997.firebaseio.com/");
 
-    var sync = $firebase(ref).$asObject;
+    var sync = $firebaseArray(ref);
 
-    sync.$set('items', items);
+    //sync.$add('items' : items);
 
     this.getItems = function () {
         return items;

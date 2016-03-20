@@ -1,14 +1,15 @@
 'use strict';
 
-var categories = [
-    {'id': 1, 'name': 'films'},
-    {'id': 2, 'name': 'musiques'}
-];
+app.service('categoryProvider', function ($firebaseArray) {
 
-app.service('categoryProvider', function () {
+    var ref =  new Firebase("https://popping-inferno-6997.firebaseio.com/");
+
+    var sync = $firebaseArray(ref);
+    //ref.push(categories);
+    //sync.$add({"categories" : categories});
     this.getCategories = function () {
         return categories;
-    }
+    };
 
     this.create = function (category) {
         category['id'] = categories.length + 1;

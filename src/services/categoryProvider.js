@@ -1,24 +1,27 @@
 'use strict';
 
-var categories = [
-        {'id': 1, 'name': 'films'},
-        {'id': 2, 'name': 'musiques'}
-    ];
 
-app.service('categoryProvider', function ($firebaseArray) {
+app.service('categoryProvider', function ($firebase) {
 
-    var ref =  new Firebase("https://popping-inferno-6997.firebaseio.com/");
+    var ref =  new Firebase("https://popping-inferno-6997.firebaseio.com/categories");
 
-    var itemsRef = ref.child("categories");
-    itemsRef.set(categories);
+    var sync = $firebase(ref);
 
-    //var sync = $firebaseArray(ref);
+
+
+    // var itemsRef = ref.child("categories");
+    //itemsRef.set(categories);
+
+    //var sync = $firebase(ref);
     //ref.push(categories);
     //sync.$add(categories);
 
     this.getCategories = function () {
-        return categories;
+
+        return sync.$asArray();
     };
+
+    
 
     this.create = function (category) {
         category['id'] = categories.length + 1;

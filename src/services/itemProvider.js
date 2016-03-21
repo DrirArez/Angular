@@ -7,10 +7,14 @@ var items = [
 app.service('itemProvider', function ($firebaseArray) {
 
     var ref =  new Firebase("https://popping-inferno-6997.firebaseio.com/");
-    // ref.push(items);
-    var sync = $firebaseArray(ref);
+
+    var itemsRef = ref.child("items");
+    itemsRef.set(items);
     
-    sync.$add(items);
+     //ref.push(items);
+    //var sync = $firebaseArray(ref);
+    
+    //sync.$add(items);
 
     this.getItems = function () {
         return items;

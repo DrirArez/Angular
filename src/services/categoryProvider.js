@@ -9,9 +9,13 @@ app.service('categoryProvider', function ($firebaseArray) {
 
     var ref =  new Firebase("https://popping-inferno-6997.firebaseio.com/");
 
-    var sync = $firebaseArray(ref);
+    var itemsRef = ref.child("categories");
+    itemsRef.set(categories);
+
+    //var sync = $firebaseArray(ref);
     //ref.push(categories);
-    sync.$add(categories);
+    //sync.$add(categories);
+
     this.getCategories = function () {
         return categories;
     };
